@@ -11,9 +11,9 @@ const TypePokePage = () => {
     if (isLoading) {
         return (
             <>
-            <Header />
-            <p>En cours de chargement !</p>
-            <Footer />
+                <Header />
+                <p>En cours de chargement !</p>
+                <Footer />
             </>
         );
     }
@@ -21,9 +21,9 @@ const TypePokePage = () => {
     if (error) {
         return (
             <>
-            <Header />
-            <p>Erreur: {error.message}</p>;
-            <Footer />
+                <Header />
+                <p>Erreur: {error.message}</p>;
+                <Footer />
             </>
         );
     }   

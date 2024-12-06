@@ -12,15 +12,14 @@ const PokeCardPlus = ({ poke }) => {
                 </li>
                 <li>
                     <p>Types:</p>
-                    {poke.apiTypes.map((type) => (
+                    {poke.apiTypes.map((type, index) => (
                         <>
                             <Link to={`/typepoke/${type.name}`}>
-                                <article key={type.name}>     
+                                <article key={index}>     
                                         <img src={type.image} alt={type.name} />
                                 </article>
                             </Link>
                         </>
-                        
                     ))}
                 </li>
                 <li>

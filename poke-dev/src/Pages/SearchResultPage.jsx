@@ -4,13 +4,13 @@ import Header from "../Components/Header/Header";
 import Footer from "../Components/Footer/Footer";
 import PokeCardPlus from "../Components/PockeCardPlus/PokeCardPlus";
 
-import useGetAllPoke from "../Hooks/useGetAllPoke";
+import usePokeSearch from "../Hooks/usePokeSearch";
 
 const SearchResultPage = () => {
   const [searchParams] = useSearchParams();  // recup param url
   const query = searchParams.get("query");  // recharge avec l'url corespondant notre comp
 
-  const { pokemon, isLoading } = useGetAllPoke(query); 
+  const { poke, isLoading } = usePokeSearch(query); 
   
   if(isLoading) {
     return (
@@ -22,7 +22,7 @@ const SearchResultPage = () => {
     );
   }
 
-  if (!isLoading && !pokemon){
+  if (!isLoading && !poke){
     return <main>Aucune pokemon trouvé</main>;
   }
 
@@ -30,11 +30,9 @@ const SearchResultPage = () => {
     <main>
           <Header/>
           <p>Votre résultat:</p>
-          {pokemon.map((poke) => (
             <article key={poke.id}>
                 <PokeCardPlus key={poke.id} poke = {poke}/>
             </article>
-          ))}
         <Footer/>
         </main>
   )

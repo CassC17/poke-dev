@@ -10,9 +10,9 @@ const ShowPokePage = () => {
     if (isLoading) {
         return (
             <>
-            <Header />
-            <p>En cours de chargement !</p>
-            <Footer />
+                <Header />
+                <p>En cours de chargement !</p>
+                <Footer />
             </>
         );
     }
@@ -20,9 +20,9 @@ const ShowPokePage = () => {
     if (error) {
         return (
             <>
-            <Header />
-            <p>Erreur: {error.message}</p>;
-            <Footer />
+                <Header />
+                <p>Erreur: {error.message}</p>;
+                <Footer />
             </>
         );
     }   
