@@ -1,4 +1,5 @@
 import { useNavigate, Link } from 'react-router-dom'
+import pokeball from '../../assets/pokeball.jpg';
 
 const Header = () => {
     const navigate = useNavigate();
@@ -14,6 +15,7 @@ const Header = () => {
 
   return (
     <>  
+        {/* <img src={pokeball} alt="pokeball"/> */}
         <p>Pokedev</p>
         <nav>
             <ul>

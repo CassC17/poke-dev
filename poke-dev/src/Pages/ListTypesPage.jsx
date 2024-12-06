@@ -39,7 +39,6 @@ const ListTypesPage = () => {
                 {types.map((type) => (
                     <Link to={`/typepoke/${type.name}`}>
                     <article key={type.id}>
-                        
                             <img src={type.image} alt={type.id} />
                             <p>{type.name}</p>
                     </article>

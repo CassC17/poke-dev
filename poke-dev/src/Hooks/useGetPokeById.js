@@ -1,3 +1,6 @@
+import { useEffect, useState } from "react";
+import { useParams } from "react-router-dom";
+
 const useGetPokeById = () => {
     const [poke, setPoke] = useState([]);
     const { id } = useParams();

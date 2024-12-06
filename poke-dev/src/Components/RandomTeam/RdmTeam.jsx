@@ -1,6 +1,6 @@
-import useGetTeam from '../Hooks/useGetTeam';
+import useGetTeam from '../../Hooks/useGetTeam';
 
-import PokeCard from '../Components/PokeCard/PokeCard';
+import PokeCard from '../PokeCard/PokeCard';
 
 const RdmTeam = () => {
     const {team, isLoading, error} = useGetTeam();

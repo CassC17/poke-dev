@@ -2,10 +2,10 @@ import Header from "../Components/Header/Header";
 import Footer from "../Components/Footer/Footer";
 import PokeCardPlus from "../Components/PockeCardPlus/PokeCardPlus";
 
-import useGetPokeByType from "../Hooks/useGetPokeByType";
+import useGetPokeById from "../Hooks/useGetPokeById";
 
 const ShowPokePage = () => {
-    const {pokemon} = useGetPokeByType();
+    const {poke, isLoading, error} = useGetPokeById();
 
     if (isLoading) {
         return (
@@ -31,11 +31,9 @@ const ShowPokePage = () => {
   return (
     <>
         <Header />
-        <main key={poke.id}>
-            {pokemon.map((poke) => (
-                    <PokeCardPlus pokemon={poke} />
-            ))}
-        </main>
+            <main key={poke.id}>
+                <PokeCardPlus key={poke.id} poke = {poke}/>
+            </main>
         <Footer />
     </>
   );

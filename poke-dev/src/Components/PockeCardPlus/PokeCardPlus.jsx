@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom"
 
 const PokeCardPlus = ({ poke }) => {
     return (
@@ -12,9 +13,14 @@ const PokeCardPlus = ({ poke }) => {
                 <li>
                     <p>Types:</p>
                     {poke.apiTypes.map((type) => (
-                        <article key={type.name}>
-                            <img src={type.image} alt={type.name} />
-                        </article>
+                        <>
+                            <Link to={`/typepoke/${type.name}`}>
+                                <article key={type.name}>     
+                                        <img src={type.image} alt={type.name} />
+                                </article>
+                            </Link>
+                        </>
+                        
                     ))}
                 </li>
                 <li>

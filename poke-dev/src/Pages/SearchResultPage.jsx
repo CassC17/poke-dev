@@ -33,7 +33,6 @@ const SearchResultPage = () => {
           {pokemon.map((poke) => (
             <article key={poke.id}>
                 <PokeCardPlus key={poke.id} poke = {poke}/>
-                <Link to={`/showPoke/${poke.id}`}>Voir poke</Link> 
             </article>
           ))}
         <Footer/>
