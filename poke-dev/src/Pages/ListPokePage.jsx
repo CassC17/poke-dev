@@ -1,22 +1,12 @@
-import { useEffect, useState } from 'react';
-
 import Header from '../Components/Header/Header';
 import Footer from '../Components/Footer/Footer';
 
-const ListPokePage = () => {
-    const [listPoke, setListPoke] = useState([null]);
-    const [isLoading, setIsLoading] = useState(true);
-    console.log(listPoke);
+import useGetAllPoke from '../Hooks/useGetAllPoke';
+import PokeCardPlus from '../Components/PockeCardPlus/PokeCardPlus';
 
-    useEffect(() => {
-        fetch('https://pokeapi.co/api/v1/pokemon')
-            .then((response) => response.json())
-            .then((data) => {
-                setListPoke(data);
-                setIsLoading(false);
-            });
-    }, []);
-   
+const ListPokePage = () => {
+    const { poke, isLoading, error } = useGetAllPoke();
+
     if (isLoading) {
         return (
             <>
@@ -42,16 +32,66 @@ const ListPokePage = () => {
         <Header />
         <h1>Liste des pokémons</h1>
         <section>
-            {listPoke.map((poke) => (
+            <h1>Gen 1</h1>
+            {poke.slice(0,151).map((poke) => (
                 <article key={poke.id}>
-                    <img src={poke.image} alt={poke.id} />
-                    <h3>{poke.slug}</h3>
-                    <ul>
-                        <li>Génération: {poke.apiGeneration}</li>
-                        <li>Types: {poke.apiTypes.map((type) => type.apiTypes.name).join(', ')}</li>
-                        <li>Résistances: {poke.apiResistances.map((res) => res.name).join(', ')}</li>
-                        <li>Stats: {poke.stats.map((stat) => stat).join(', ')}</li>
-                    </ul>                    
+                    <PokeCardPlus key={poke.id} poke={poke} />
+                </article>
+            ))}
+        </section>
+        <section>
+            <h1>Gen 2</h1>
+            {poke.slice(151,251).map((poke) => (
+                <article key={poke.id}>
+                    <PokeCardPlus key={poke.id} poke={poke} />
+                </article>
+            ))}
+        </section>
+        <section>
+            <h1>Gen 3</h1>
+            {poke.slice(251,386).map((poke) => (
+                <article key={poke.id}>
+                    <PokeCardPlus key={poke.id} poke={poke} />
+                </article>
+            ))}
+        </section>
+        <section>
+            <h1>Gen 4</h1>
+            {poke.slice(386,497).map((poke) => (
+                <article key={poke.id}>
+                    <PokeCardPlus key={poke.id} poke={poke} />
+                </article>
+            ))}
+        </section>
+        <section>
+            <h1>Gen 5</h1>
+            {poke.slice(497, 649).map((poke) => (
+                <article key={poke.id}>
+                    <PokeCardPlus key={poke.id} poke={poke} />
+                </article>
+            ))}
+        </section>
+        <section>
+            <h1>Gen 6</h1>
+            {poke.slice(649,721).map((poke) => (
+                <article key={poke.id}>
+                    <PokeCardPlus key={poke.id} poke={poke} />
+                </article>
+            ))}
+        </section>
+        <section>
+            <h1>Gen 7</h1>
+            {poke.slice(721,809).map((poke) => (
+                <article key={poke.id}>
+                    <PokeCardPlus key={poke.id} poke={poke} />
+                </article>
+            ))}
+        </section>
+        <section>
+            <h1>Gen 8</h1>
+            {poke.slice(809,898).map((poke) => (
+                <article key={poke.id}>
+                    <PokeCardPlus key={poke.id} poke={poke} />
                 </article>
             ))}
         </section>

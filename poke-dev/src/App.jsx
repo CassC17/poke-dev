@@ -22,7 +22,7 @@ function App() {
         <Route path="/allpoke" element={<ListPokePage />} />
         <Route path="/rdmpoke" element={<RdmPokePage />} />
         <Route path="/showpoke/:id" element={<ShowPokePage />} /> 
-        <Route path="/search" element={<SearchResultPage />} />
+        <Route path="/search/" element={<SearchResultPage />} />
         <Route path="/listtypes" element={<ListTypesPage />} />
         <Route path="/typepoke/:type" element={<TypePokePage />} />
       </Routes>
