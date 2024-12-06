@@ -1,12 +1,14 @@
 import Header from '../Components/Header/Header'
+import Footer from '../Components/Footer/Footer'
+
+import RdmTeam from './RdmTeam'
 
 const Home = () => {
   return (
     <>
         <Header />
-        <main>
-            <h1>Hello World</h1>
-        </main>
+        <RdmTeam/>
+        <Footer/>
     </>
   )
 }
