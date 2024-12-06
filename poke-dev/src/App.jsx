@@ -9,6 +9,8 @@ import ListPokePage from './Pages/ListPokePage'
 import RdmPokePage from './Pages/RdmPokePage'
 import SearchResultPage from './Pages/SearchResult'
 import ShowPokePage from './Pages/ShowPokePage'
+import ListTypesPage from './Pages/ListTypesPage'
+import TypePokePage from './Pages/TypePokePage'
 
 function App() {
 
@@ -21,6 +23,8 @@ function App() {
         <Route path="/rdmpoke" element={<RdmPokePage />} />
         <Route path="/showsoke/:id" element={<ShowPokePage />} /> 
         <Route path="/search" element={<SearchResultPage />} />
+        <Route path="/listtypes" element={<ListTypesPage />} />
+        <Route path="/typepoke/:type" element={<TypePokePage />} />
       </Routes>
     </Router>  
     </>

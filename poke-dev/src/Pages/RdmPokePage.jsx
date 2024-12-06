@@ -3,9 +3,16 @@ import Footer from "../Components/Footer/Footer";
 import PokeCard from "../Components/PockeCardPlus/PokeCardPlus";
 
 import useGetRdmPoke from "../Hooks/useGetRdmPoke";
+import { useState } from "react";
 
 const RdmPokePage = () => {
-    const { poke, isLoading, error } = useGetRdmPoke();  
+
+  const [reload, setReload] = useState(false);
+    const { poke, isLoading, error } = useGetRdmPoke(reload);  
+
+    const handleClick = () => {
+        setReload(!reload);
+    }
 
     if (isLoading) {
         return (
@@ -32,10 +39,10 @@ const RdmPokePage = () => {
       <Header />
       <h1>Pokémon aléatoire</h1>
       <main>
-        <button onClick={useGetRdmPoke}>Trouvez un pokémon</button>
-        {poke.map((poke) => (
-            <PokeCard key={poke.id} poke={poke} />
-        ))}
+        <button onClick={handleClick}>Trouvez un pokémon</button>
+        
+            <PokeCard poke={poke} /> 
+        
       </main>
       <Footer />
     </>

@@ -18,6 +18,7 @@ const useGetPokeByType = () => {
             setPoke(data);
             setIsLoading(false);
             console.table("Poke by type", data);
+            console.log(type);
         } catch (error) {
             setError(error);
             setIsLoading(false);

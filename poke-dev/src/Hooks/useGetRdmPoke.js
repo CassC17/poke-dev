@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 
-const useGetRdmPoke = () => {
+const useGetRdmPoke = (reload) => {
   const [poke, setPoke] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState(null);
@@ -22,7 +22,7 @@ const useGetRdmPoke = () => {
     };
     fetchRdmPoke();
   },
-  []);
+  [reload]);
 
   return { poke, isLoading, error };
 };

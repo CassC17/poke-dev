@@ -1,3 +1,4 @@
+
 const PokeCardPlus = ({ poke }) => {
     return (
         <article key={poke.id}>
@@ -11,15 +12,15 @@ const PokeCardPlus = ({ poke }) => {
                 <li>
                     <p>Types:</p>
                     {poke.apiTypes.map((type) => (
-                    <article>
-                        <img src={type.image} alt={type.name} />
-                    </article>
-                ))}
+                        <article key={type.name}>
+                            <img src={type.image} alt={type.name} />
+                        </article>
+                    ))}
                 </li>
                 <li>
                     <p>Résistances:</p> 
                     {poke.apiResistances.map((res) =>(
-                        <article>
+                        <article key={res.name}>
                             <p>{res.name}</p>
                             <p>{res.damage_relation}</p>
                         </article>
